@@ -1,5 +1,5 @@
 #         File: bashrc
-# Last Updated: 20210502
+# Last Updated: 20210503
 #       Author: Carl Hicks
 #===========================#
 
@@ -7,6 +7,8 @@
 shopt -s autocd
 
 PS1="\w > "
+
+export GPG_TTY=$(tty) #for gpg commit signing
 
 export EDITOR="/opt/homebrew/bin/emacs"
 export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
