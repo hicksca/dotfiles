@@ -6,6 +6,7 @@ Dependencies:
     - bash
     - emacs
     - git
+  - [Docker][2]
 
 Contains:
 
@@ -19,3 +20,4 @@ Contains:
 
 
 [1]:https://brew.sh/
+[2]:https://hub.docker.com/editions/community/docker-ce-desktop-mac
