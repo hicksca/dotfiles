@@ -6,6 +6,7 @@ Dependencies:
     - bash
     - emacs
     - git
+    - gnupg
   - [Docker][2]
 
 Contains:
