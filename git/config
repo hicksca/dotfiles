@@ -1,0 +1,29 @@
+#         File: config
+#      Details: main git config file
+# Last Updated: 20210502
+#       Author: Carl Hicks
+#====================================#
+
+
+[user]
+	name = Carl Hicks
+	
+[push]
+	default = current
+
+[apply]
+	whitespace = fix
+
+[core]
+	editor = "emacsclient -a ''" 
+	excludesfile = ~/.config/gitignore
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+[alias]
+	co = checkout
+	bls = branch -l	
+
+
+[includeIf "gitdir:~/Code/Github/personal-projects/"]
+	path = ~/.config/git/config_gh_personal
+	
