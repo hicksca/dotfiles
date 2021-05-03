@@ -1,0 +1,14 @@
+#         File: .bashrc
+# Last Updated: 20210502
+#       Author: Carl Hicks
+#===========================#
+
+
+shopt -s autocd
+
+PS1="\w > "
+
+export EDITOR="/opt/homebrew/bin/emacs"
+export VISUAL=emacsclient
+
+alias work="cd ~/Code/Github/focus-projects"

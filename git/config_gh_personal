@@ -1,0 +1,17 @@
+#         File: config_gh_personal
+#      Details: Personal git config file (Personal GH Projects)
+# Last Updated: 20210502
+#       Author: Carl Hicks
+#=================================================================#
+
+[alias]
+	nb = "!func () { \
+	         git co -b $(date "+%Y%m%d")-$1; \
+              }; func"
+
+[github]
+	user = hicksca
+
+
+[user]
+	email = carl@hicksca.dev
