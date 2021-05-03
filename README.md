@@ -14,6 +14,9 @@ Contains:
      - profile
      - bashrc
 
+  - emacs
+     - init.el
+
   - git
      - config (main git config file)
      - config_gh_personal (user and GH settings for personal account)
