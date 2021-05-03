@@ -1,6 +1,6 @@
 #         File: config_gh_personal
 #      Details: Personal git config file (Personal GH Projects)
-# Last Updated: 20210502
+# Last Updated: 20210503
 #       Author: Carl Hicks
 #=================================================================#
 
@@ -8,6 +8,9 @@
 	nb = "!func () { \
 	         git co -b $(date "+%Y%m%d")-$1; \
               }; func"
+
+[commit]
+	gpgsign = true
 
 [github]
 	user = hicksca
