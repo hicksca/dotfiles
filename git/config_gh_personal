@@ -12,9 +12,12 @@
 [github]
 	user = hicksca
 
+[gpg]
+	program = gpg
 
 [user]
 	email = carl@hicksca.dev
+	signingkey = 890058527F583275
 
 [pull]
 	rebase = true
