@@ -2,7 +2,7 @@
 Starting fresh on new machine (mac currently)
 
 Dependencies:
-  - [homebrew][1]
+  - [Homebrew][1]
     - bash
     - emacs
     - git
