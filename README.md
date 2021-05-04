@@ -1,5 +1,5 @@
 # dotfiles
-Starting fresh on new machine (mac currently)
+Starting fresh on new machine (mac currently although trying to be as porable as possiable to use accross all personal machines)
 
 Dependencies:
   - [Homebrew][1]
