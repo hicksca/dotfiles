@@ -1,5 +1,5 @@
 #         File: bashrc
-# Last Updated: 20210503
+# Last Updated: 20210504
 #       Author: Carl Hicks
 #===========================#
 
@@ -9,6 +9,11 @@ shopt -s autocd
 PS1="\w > "
 
 export GPG_TTY=$(tty) #for gpg commit signing
+
+# Making sure homebrew paths are set
+eval "$(/opt/homebrew/bin/brew shellenv)"
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
 
 export EDITOR="/opt/homebrew/bin/emacs"
 export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
