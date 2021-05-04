@@ -10,15 +10,20 @@ PS1="\w > "
 
 export GPG_TTY=$(tty) #for gpg commit signing
 
-# Making sure homebrew paths are set
-eval "$(/opt/homebrew/bin/brew shellenv)"
-export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
-export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
+# Setting some OS related settings
+if [[ "$OSTYPE" == "darwin"* ]]; then
+   # Making sure homebrew paths are set
+   eval "$(/opt/homebrew/bin/brew shellenv)"
+   export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+   export PATH="/opt/homebrew/opt/icu4c/sbin:$PATH"
 
-export EDITOR="/opt/homebrew/bin/emacs"
-export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
-export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
-export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
+
+   export EDITOR="/opt/homebrew/bin/emacs"
+   export GUILE_LOAD_PATH="/opt/homebrew/share/guile/site/3.0"
+   export GUILE_LOAD_COMPILED_PATH="/opt/homebrew/lib/guile/3.0/site-ccache"
+   export GUILE_SYSTEM_EXTENSIONS_PATH="/opt/homebrew/lib/guile/3.0/extensions"
+
+fi
 
 export VISUAL=emacsclient
 
