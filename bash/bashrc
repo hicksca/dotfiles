@@ -1,14 +1,16 @@
 #         File: bashrc
-# Last Updated: 20210504
+# Last Updated: 20210505
 #       Author: Carl Hicks
 #===========================#
 
 
+# bash niceties
 shopt -s autocd
+shopt -s histappend
 
-PS1="\w > "
+HISTSIZE=1000
+HISTFILESIZE=2000
 
-export GPG_TTY=$(tty) #for gpg commit signing
 
 # Setting some OS related settings
 if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -25,6 +27,19 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 
 fi
 
+
+# function pull current git branch
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
+
+PS1="\w\$(parse_git_branch) > "
+
+
+export GPG_TTY=$(tty) #for gpg commit signing
+
 export VISUAL=emacsclient
+export EDITOR=emacs
 
 alias work="cd ~/Code/Github/focus-projects"
+alias github="cd ~/Code/Github"
