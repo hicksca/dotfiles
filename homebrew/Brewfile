@@ -1,0 +1,20 @@
+#         File: Brewfile
+# Last Updated: 20210505
+#       Author: Carl Hicks
+#===========================#
+
+
+# shell and shell env tools
+brew "bash"
+
+# editor
+brew "emacs"
+
+# Source Control Tools
+brew "git"
+brew "gh"
+
+
+# code
+# js
+brew "node"
