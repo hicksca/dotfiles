@@ -1,5 +1,5 @@
 #         File: bashrc
-# Last Updated: 20210505
+# Last Updated: 20210506
 #       Author: Carl Hicks
 #===========================#
 
@@ -30,7 +30,7 @@ fi
 
 # function pull current git branch
 parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
 
 PS1="\w\$(parse_git_branch) > "
@@ -41,5 +41,8 @@ export GPG_TTY=$(tty) #for gpg commit signing
 export VISUAL=emacsclient
 export EDITOR=emacs
 
-alias work="cd ~/Code/Github/focus-projects"
-alias github="cd ~/Code/Github"
+
+# moving aliases out to another file
+if [ -f ~/.bash_aliases ]; then
+   source ~/.bash_aliases
+fi

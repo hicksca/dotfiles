@@ -1,0 +1,8 @@
+#         File: bash_aliases
+# Last Updated: 20210506
+#       Author: Carl Hicks
+#=============================#
+
+# directory related stuff
+alias github="cd ~/Code/Github"
+alias work="cd ~/Code/Github/work-projects"
