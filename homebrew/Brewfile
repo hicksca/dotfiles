@@ -15,6 +15,9 @@ brew "git"
 brew "gh"
 
 
+# cloud tooling
+brew "awscli"
+
 # code
 # js
 brew "node"
