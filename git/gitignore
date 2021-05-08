@@ -1,0 +1,7 @@
+#         File: gitignore
+# Last Updated: 20210506
+#       Author: Carl Hicks
+#===========================#
+
+
+Brewfile.lock.json

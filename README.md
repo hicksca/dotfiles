@@ -1,6 +1,6 @@
 <!---
 #         File: README.md
-# Last Updated: 20210506
+# Last Updated: 20210505
 #       Author: Carl Hicks
 #===========================#
 -->
@@ -10,13 +10,19 @@ Starting fresh on new machine
 (mac currently although trying to be as portable as possiable to use accross all personal machines)
 
 Dependencies:
-  - [Homebrew][1]
-    - bash
-    - emacs
-    - git
-    - gnupg
-  - [Docker][2]
 
+- macOS specific
+  - [homebrew][1]
+- Linux specific
+  - ??? Pleaseholder (have to think through this a little more)
+- General  
+  - bash
+  - [docker][2]
+  - emacs
+  - git
+  - gnupg
+
+    
 Contains:
 
   - bash
@@ -30,6 +36,10 @@ Contains:
   - git
      - config (main git config file)
      - config_gh_personal (user and GH settings for personal account)
+
+  - homebrew
+     - Brewfile
+
 
 
 [1]:https://brew.sh/
