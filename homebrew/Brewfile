@@ -1,5 +1,5 @@
 #         File: Brewfile
-# Last Updated: 20210505
+# Last Updated: 20210519
 #       Author: Carl Hicks
 #===========================#
 
@@ -17,6 +17,7 @@ brew "gh"
 
 # cloud tooling
 brew "awscli"
+brew "pulumi"
 
 # code
 # js
