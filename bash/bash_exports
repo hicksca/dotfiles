@@ -1,0 +1,9 @@
+#         File: bash_exports
+# Last Updated: 20210519
+#       Author: Carl Hicks
+#==============================#
+
+
+# AWS CLI config
+export AWS_CONFIG_FILE=~/.config/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=~/.config/aws/credentials

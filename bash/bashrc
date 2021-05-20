@@ -1,5 +1,5 @@
 #         File: bashrc
-# Last Updated: 20210506
+# Last Updated: 20210519
 #       Author: Carl Hicks
 #===========================#
 
@@ -42,7 +42,11 @@ export VISUAL=emacsclient
 export EDITOR=emacs
 
 
-# moving aliases out to another file
-if [ -f ~/.bash_aliases ]; then
-   source ~/.bash_aliases
+# Pulling aliases and/or exports from another file
+if [ -f ~/.config/bash_aliases ]; then
+   source ~/.config/bash_aliases
+fi
+
+if [ -f ~/.config/bash_exports ]; then
+   source ~/.config/bash_exports
 fi

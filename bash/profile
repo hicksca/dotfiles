@@ -1,9 +1,11 @@
 #         File: profile
-# Last Updated: 20210504
+# Last Updated: 20210519
 #       Author: Carl Hicks
 #===========================#
 
 
-if [ -f $HOME/.bashrc ]; then
-        source $HOME/.bashrc
+export XDG_CONFIG_HOME=~/.config
+
+if [ -f $XDG_CONFIG_HOME/bash/bashrc ]; then
+        source $XDG_CONFIG_HOME/bash/bashrc
 fi
