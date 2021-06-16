@@ -1,10 +1,12 @@
 #         File: profile
-# Last Updated: 20210519
+# Last Updated: 20210520
 #       Author: Carl Hicks
 #===========================#
 
-
-export XDG_CONFIG_HOME=~/.config
+if [ -z "${XDG_CONFIG_HOME}" ]; then
+     	echo "I see the env var test passed"
+	# export XDG_CONFIG_HOME=~/.config
+fi
 
 if [ -f $XDG_CONFIG_HOME/bash/bashrc ]; then
         source $XDG_CONFIG_HOME/bash/bashrc

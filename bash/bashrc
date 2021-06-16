@@ -1,5 +1,5 @@
 #         File: bashrc
-# Last Updated: 20210519
+# Last Updated: 20210524
 #       Author: Carl Hicks
 #===========================#
 
@@ -41,12 +41,13 @@ export GPG_TTY=$(tty) #for gpg commit signing
 export VISUAL=emacsclient
 export EDITOR=emacs
 
+alias edit="emacsclient -a ''"
 
 # Pulling aliases and/or exports from another file
 if [ -f ~/.config/bash_aliases ]; then
-   source ~/.config/bash_aliases
+   source ~/.config/bash/bash_aliases
 fi
 
 if [ -f ~/.config/bash_exports ]; then
-   source ~/.config/bash_exports
+   source ~/.config/bash/bash_exports
 fi

@@ -1,6 +1,6 @@
 #         File: config
 #      Details: main git config file
-# Last Updated: 20210502
+# Last Updated: 20210616
 #       Author: Carl Hicks
 #====================================#
 
@@ -15,15 +15,24 @@
 	whitespace = fix
 
 [core]
-	editor = "emacsclient -a ''" 
+	editor = "emacsclient -a ''" # opens in current emacs window if any
 	excludesfile = ~/.config/gitignore
 	whitespace = space-before-tab,-indent-with-non-tab,trailing-space
 
 [alias]
+	# allows you to see you aliases like you can with bash's alias cmd
+	alias=!git config -l | grep ^alias | cut -c 7- | sort
 	co = checkout
-	bls = branch -l	
+	bls = branch -l
+	bdel = branch -D
+	# Switch to a branch, creating it if needed
+	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 
+# Other configs per context im working in personal vs work
 [includeIf "gitdir:~/Code/Github/personal-projects/"]
 	path = ~/.config/git/config_gh_personal
+
+[includeIf "gitdir:~/Code/Github/sourcegraph-projects/"]
+	path = ~/.config/git/config_gh_sourcegraph
 	
