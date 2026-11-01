@@ -1,0 +1,12 @@
+[user]
+	name = Carl H (hicksca)
+	email = cah@hicksca.dev
+	signingkey = 64E7B4FCE448B31E
+[gpg]
+	program = /Users/hicksca/.local/bin/gpg
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[init]
+	defaultBranch = main
