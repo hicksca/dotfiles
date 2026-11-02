@@ -20,11 +20,19 @@ This repository contains dotfiles designed to keep development environments cons
 
 ## Structure
 
-```text
-dotfiles/
-├── bin/            # Custom utility scripts and standalone executables
-├── git/            # Git configuration (.gitconfig, .gitignore_global)
-├── shell/          # Aliases, exports, functions, and prompt configuration
-├── vim/            # Editor configuration and plugin definitions
-├── install.sh      # Core setup / symlinking script
-└── README.md       # Repository documentation
+This repository uses a bare Git repository setup, tracking dotfiles directly from `$HOME` without symlinks:
+
+
+```bash
+~
+├── .config/
+│   ├── git/              # Git configuration and ignore settings
+│   ├── iterm2/            # iTerm2 terminal preferences
+│   └── raycast/          # Raycast launcher extensions and configuration
+├── .zprofile             # Environment variables and login shell setup
+├── .zshrc                # Interactive Zsh configuration, aliases, and prompts
+├── LICENSE               # License terms
+└── README.md             # Repository documentation
+```
+
+
