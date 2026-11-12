@@ -1,3 +1,9 @@
+[help]
+	autocorrect = 1
+
+[core]
+        excludesfile = ~/.config/git/gitignore
+
 [user]
 	name = Carl H (hicksca)
 	email = cah@hicksca.dev

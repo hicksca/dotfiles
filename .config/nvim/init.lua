@@ -16,3 +16,25 @@ end
 -- Reapply whenever a colorscheme loads, since it resets highlights
 vim.api.nvim_create_autocmd("ColorScheme", { callback = clear_background })
 clear_background()
+
+-- Keep undo history across sessions (stored in ~/.local/state/nvim/undo)
+vim.opt.undofile = true
+
+-- Indentation: use spaces, 4 wide
+vim.opt.expandtab = true    -- insert spaces when pressing Tab
+vim.opt.tabstop = 4         -- display existing tab characters as 4 columns
+vim.opt.shiftwidth = 4      -- indent width for >>, <<, and auto-indent
+vim.opt.softtabstop = 4     -- Tab and Backspace move in 4-space steps
+
+-- Line numbers in code files only
+local prose_filetypes = {
+  text = true, gitcommit = true, gitrebase = true,
+}
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    local buf = vim.bo[args.buf]
+    local is_code = buf.buftype == "" and not prose_filetypes[buf.filetype]
+    vim.opt_local.number = is_code
+  end,
+})
