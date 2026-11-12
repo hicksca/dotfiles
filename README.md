@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal configuration for Zsh and Git on macOS.
+Personal configuration for Zsh, Git, and Neovim on macOS.
 
 ## Structure
 
@@ -9,7 +9,8 @@ This repository is a bare Git repository that tracks files directly from `$HOME`
 ```
 ~
 ├── .config/
-│   └── git/      # Git configuration and global ignore rules
+│   ├── git/      # Git configuration and global ignore rules
+│   └── nvim/     # Neovim configuration
 ├── .zprofile     # Login environment: PATH, editor, local dirs, OrbStack
 ├── .zshrc        # Interactive shell: keybindings, aliases, integrations
 ├── LICENSE
@@ -21,6 +22,8 @@ This repository is a bare Git repository that tracks files directly from `$HOME`
 `.zprofile` runs once per login shell and sets up the environment. It creates `~/.local/bin` and `~/.local/src` if they are missing, puts `~/.local/bin` at the front of `PATH` so locally built tools take priority, sets `EDITOR` and `VISUAL` to Neovim (falling back to Vim), and loads OrbStack's shell integration when OrbStack is installed.
 
 `.zshrc` runs for every interactive shell. It keeps emacs-style line editing (zsh would otherwise switch to vi mode because `EDITOR` is Vim), sets `GPG_TTY` so GPG can prompt for passphrases, defines the `dotfiles` and `tailscale` aliases, and loads iTerm2 shell integration when present.
+
+`.config/nvim/init.lua` keeps Neovim's background transparent so the terminal's own background shows through, and reapplies this whenever a colorscheme is loaded.
 
 Git does not set `core.editor`, so it follows `EDITOR`.
 
