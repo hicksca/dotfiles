@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal configuration for Zsh, Git, and Neovim on macOS.
+Personal configuration for Zsh, Git, Neovim, and tmux on macOS.
 
 ## Structure
 
@@ -10,9 +10,10 @@ This repository is a bare Git repository that tracks files directly from `$HOME`
 ~
 ├── .config/
 │   ├── git/      # Git configuration and global ignore rules
-│   └── nvim/     # Neovim configuration
+│   ├── nvim/     # Neovim configuration
+│   └── tmux/     # tmux configuration
 ├── .zprofile     # Login environment: PATH, editor, local dirs, OrbStack
-├── .zshrc        # Interactive shell: keybindings, aliases, integrations
+├── .zshrc        # Interactive shell: keybindings, aliases, completion
 ├── LICENSE
 └── README.md
 ```
@@ -21,9 +22,11 @@ This repository is a bare Git repository that tracks files directly from `$HOME`
 
 `.zprofile` runs once per login shell and sets up the environment. It creates `~/.local/bin` and `~/.local/src` if they are missing, puts `~/.local/bin` at the front of `PATH` so locally built tools take priority, sets `EDITOR` and `VISUAL` to Neovim (falling back to Vim), and loads OrbStack's shell integration when OrbStack is installed.
 
-`.zshrc` runs for every interactive shell. It keeps emacs-style line editing (zsh would otherwise switch to vi mode because `EDITOR` is Vim), sets `GPG_TTY` so GPG can prompt for passphrases, defines the `dotfiles` and `tailscale` aliases, and loads iTerm2 shell integration when present.
+`.zshrc` runs for every interactive shell. It keeps emacs-style line editing (zsh would otherwise switch to vi mode because `EDITOR` is Vim), enables `auto_cd` so typing a directory path changes into it, and turns on zsh's completion system, which also completes SSH hosts from `~/.ssh/config`. It sets `GPG_TTY` so GPG can prompt for passphrases, defines the `dotfiles` and `tailscale` aliases, adds `~cgh` as a named directory for `~/code/github`, and loads iTerm2 shell integration when present.
 
-`.config/nvim/init.lua` keeps Neovim's background transparent so the terminal's own background shows through, and reapplies this whenever a colorscheme is loaded.
+`.config/nvim/init.lua` indents with 4 spaces, keeps undo history across sessions, shows line numbers in code files but not prose, and creates missing parent directories when saving a file to a new path. It also keeps Neovim's background transparent so the terminal's own background shows through, reapplying this whenever a colorscheme is loaded.
+
+`.config/tmux/tmux.conf` keeps the default `Ctrl-b` prefix and adds mouse support, a 100,000 line scrollback, and window and pane numbering that starts at 1. Panes split with `|` and `-`, `w` opens a new window, and `n` renames the current one, with new panes and windows opening in the current directory.
 
 Git does not set `core.editor`, so it follows `EDITOR`.
 
