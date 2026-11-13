@@ -38,3 +38,21 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.number = is_code
   end,
 })
+
+-- Create any missing parent directories when saving a file
+local function ensure_parent_dir(path)
+  local dir = vim.fn.fnamemodify(path, ":p:h")
+  if vim.fn.isdirectory(dir) == 0 then
+    vim.fn.mkdir(dir, "p")
+  end
+end
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function(args)
+    -- Skip URL-style buffers (scp://, oil://, etc.)
+    if args.match:match("^%w+://") then
+      return
+    end
+    ensure_parent_dir(args.match)
+  end,
+})
