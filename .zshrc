@@ -12,7 +12,16 @@ export GPG_TTY=$(tty)
 autoload -Uz compinit && compinit
 
 # Manage dotfiles via the bare repo, with $HOME as the work tree
-alias dotfiles="git --git-dir=\$HOME/code/github/dotfiles --work-tree=\$HOME"
+dotfiles() {
+  git --git-dir="$HOME/code/github/dotfiles" --work-tree="$HOME" "$@"
+}
+
+# Complete dotfiles like git, pointed at the bare repo
+_dotfiles() {
+  local -x GIT_DIR="$HOME/code/github/dotfiles" GIT_WORK_TREE="$HOME"
+  service=git _git
+}
+compdef _dotfiles dotfiles
 
 # Point the Tailscale CLI at the daemon socket (for the open-source tailscaled build)
 alias tailscale="tailscale --socket=/var/run/tailscaled.socket"
